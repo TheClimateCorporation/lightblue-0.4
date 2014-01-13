@@ -464,9 +464,9 @@ class _AsyncDeviceInquiry(Foundation.NSObject):
         if self.cb_completed:
             self.cb_completed(err, aborted)
     deviceInquiryComplete_error_aborted_ = objc.selector(
-        deviceInquiryComplete_error_aborted_, signature="v@:@iB")
-             
-    # - (void)deviceInquiryStarted:(IOBluetoothDeviceInquiry*)sender;             
+        deviceInquiryComplete_error_aborted_, signature="v@:@iZ")
+
+    # - (void)deviceInquiryStarted:(IOBluetoothDeviceInquiry*)sender;
     def deviceInquiryStarted_(self, inquiry):
         if self.cb_started:
             self.cb_started()
