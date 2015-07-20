@@ -561,8 +561,9 @@ class _AsyncPair(Foundation.NSObject):
     # - (void) devicePairingFinished:(id)sender
     #                          error:(IOReturn)error;
     def devicePairingFinished_error_(self, sender, error):
-        print "devicePairingFinished_error_: %lu" % error
-        self.error = error
+        if error:
+            print "devicePairingFinished_error_: %lu" % error
+            self.error = error
         _macutil.interruptwait()
     devicePairingFinished_error_ = objc.selector(
         devicePairingFinished_error_, signature="v@:@i")
