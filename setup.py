@@ -62,5 +62,4 @@ setup(name="lightblue",
 if MAC:
     if "install" in sys.argv:
         import os
-        os.chdir("src/mac/LightAquaBlue")
-        os.system("xcodebuild install -arch $(uname -m) -target LightAquaBlue -configuration Release DSTROOT=/ INSTALL_PATH=/Library/Frameworks DEPLOYMENT_LOCATION=YES")
+        os.system('./install_lightaquablue.sh')
